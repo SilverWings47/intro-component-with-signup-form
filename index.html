@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Frontend Mentor | Intro component with sign up form</title>
+  </head>
+
+  <body>
+
+    <main class="container">
+      <div class="left">
+        <h1 class="primary-title">Learn to code by watching others</h1>
+        <p class="primary-text">
+          See how experienced developers solve problems in real-time. Watching scripted tutorials is great,
+          but understanding how developers think is invaluable.
+        </p>
+      </div>
+
+      <div class="right">
+        <button class="primary-btn"><span>Try it free 7 days</span> then $20/mo. thereafter</button>
+        <div class="form-container">
+          <form action="#" novalidate>
+            <div class="input-container">
+              <input required type="text" placeholder="First Name">
+              <span class="error-msg">First Name cannot be empty</span>
+            </div>
+            <div class="input-container">
+              <input required type="text" placeholder="Last Name">
+              <span class="error-msg">Last Name cannot be empty</span>
+            </div>
+            <div class="input-container">
+              <input required type="email" placeholder="Email Address">
+              <span class="error-msg">Looks like this is not an email</span>
+            </div>
+            <div class="input-container">
+              <input required type="password" placeholder="Password">
+              <span class="error-msg">Password cannot be empty</span>
+            </div>
+            <button>Claim your free trial</button>
+          </form>
+          <p class="terms-services">By clicking the button, you are agreeing to our <a href="#">Terms and Services</a></p>
+        </div>
+      </div>
+    </main>
+    <script src="js/main.js"></script>
+  </body>
+
+</html>

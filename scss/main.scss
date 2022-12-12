@@ -1,0 +1,232 @@
+@import '_reset';
+@import '_config';
+
+body {
+    font-family: $ff-primary;
+    background-image: url($bg-mobile);
+    background-color: $clr-primary-red;
+
+    @include desktop {
+        background-image: url($bg-desktop);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.container {
+    display: grid;
+    padding: 6rem 1.475rem 3rem 1.475rem;
+
+    @include desktop {
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        max-width: 70rem;
+        width: 95%;
+        padding: 0;
+        gap: 1rem;
+    }
+}
+
+.right {
+    display: grid;
+}
+
+.left {
+
+    @include desktop {
+        margin-top: 4rem;
+    }
+
+    .primary-title {
+        color: white;
+        text-align: center;
+        font-size: 1.695rem;
+        font-weight: $fw-bold-700;
+        line-height: 1.35;
+
+        @include desktop {
+            text-align: left;
+            font-size: 3rem;
+            line-height: 1.2;
+        }
+    }
+
+    .primary-text {
+        color: white;
+        text-align: center;
+        margin-top: 1.6rem;
+        margin-bottom: 3.6rem;
+        font-weight: $fw-regular-400;
+        font-size: 1rem;
+
+        @include desktop {
+            text-align: left;
+            margin-right: 1.25em;
+            opacity: .7;
+        }
+    }
+}
+
+.primary-btn {
+    position: relative;
+    border: none;
+    border-radius: .5rem;
+    background-color: $clr-accent-blue;
+    color: white;
+    padding: 1rem 3rem;
+    font-weight: $fw-regular-300;
+    margin-bottom: 1.55rem;
+    line-height: 1.7;
+    cursor: pointer;
+
+    @include desktop {
+        padding-inline: 0;
+    }
+
+    &::before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color: #000000, $alpha: .139);
+        z-index: -1;
+        position: absolute;
+        top: 7.8px;
+        left: 0;
+        border-radius: .5rem;
+    }
+
+    span {
+        font-weight: $fw-bold-700;
+    }
+}
+
+.form-container {
+    background-color: white;
+    padding: 1.5rem 1.5rem 2rem 1.5rem;
+    border-radius: .5rem;
+    position: relative;
+
+    @include desktop {
+        padding: 2.5rem;
+    }
+
+    &::before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 8px;
+        left: 0;
+        border-radius: inherit;
+        background-color: rgba($color: #000000, $alpha: .1);
+        z-index: -1;
+    }
+
+    .terms-services {
+        line-height: 1.78;
+        padding-inline: 1rem;
+        margin-top: .8rem;
+        font-size: .7rem;
+        text-align: center;
+        color: rgba($color: #000000, $alpha: .4);
+        font-weight: $fw-regular-500;
+
+        a {
+            text-decoration: none;
+            color: rgba($color: $clr-primary-red, $alpha: 1.0);
+            font-weight: $fw-bold-700;
+        }
+    }
+}
+
+form {
+    display: grid;
+    gap: 1rem;
+    z-index: -2;
+
+    .input-container {
+        display: inline-flex;
+        flex-direction: column;
+        gap: .4rem;
+
+        input {
+            position: relative;
+            display: block;
+            padding: 1rem 1.5rem;
+            font-size: .875rem;
+            font-weight: $fw-bold-600;
+            border-radius: 5px;
+            border: 1px solid rgba($color: #000000, $alpha: .15);
+            outline: none;
+
+            @include desktop {
+                padding: 1rem 2rem;
+            }
+
+            &.submitted:invalid {
+                border: 2px solid $clr-primary-red;
+                background-image: url('../images/icon-error.svg');
+                background-repeat: no-repeat;
+                background-position: 95% center;
+                background-size: 20px;
+                color: $clr-primary-red;
+                font-weight: $fw-bold-700
+            }
+
+            &.submitted:invalid + span {
+                display: inline-block;
+            }
+
+            &:focus {
+                border: 1px solid rgba($color: #000000, $alpha: 1);
+            }
+        }
+
+        .error-msg {
+            display: none;
+            text-align: right;
+            font-size: .65rem;
+            color: $clr-primary-red;
+            font-style: italic;
+            font-weight: $fw-regular-500;
+        }
+    }
+
+    button {
+        position: relative;
+        border: none;
+        border-radius: .4rem;
+        padding: .975rem 1rem;
+        background-color: $clr-primary-green;
+        color: white;
+        font-weight: $fw-regular-500;
+        text-transform: uppercase;
+        font-size: .975rem;
+        letter-spacing: 1px;
+        cursor: pointer;
+        box-shadow: 0 2px 0 1px darken($clr-primary-green, 10%);
+
+        &:active {
+            opacity: .7;
+        }
+
+        &::before {
+            content: '';
+            display: none;
+            width: 100%;
+            height: 100%;
+            background-color: rgba($color: #000000, $alpha: 1);
+            position: absolute;
+            top: 7.8px;
+            left: 0;
+            border-radius: .5rem;
+            z-index: -1;
+        }
+    }
+}

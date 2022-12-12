@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+// Colors
+
+$clr-primary-red: hsl(0, 100%, 74%);
+$clr-primary-green: hsl(154, 59%, 51%);
+$clr-accent-blue: hsl(248, 32%, 49%);
+$clr-neutral-blue-700: hsl(248, 32%, 49%);
+$clr-neutral-blue-400: hsl(248, 32%, 49%);
+
+// Font sizes
+
+$fs-primary: 16px;
+
+// Font Family
+
+$ff-primary: 'Poppins', sans-serif;
+
+// Font weights
+
+$fw-bold-700: 700;
+$fw-bold-600: 600;
+$fw-regular-500: 500;
+$fw-regular-400: 400;
+$fw-regular-300: 300;
+
+$bg-desktop: '../images/bg-intro-desktop.png';
+$bg-mobile: '../images/bg-intro-mobile.png';
+
+@mixin desktop {
+    @media (min-width: 768px) {
+        @content
+    }
+}
