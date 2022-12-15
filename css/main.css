@@ -290,36 +290,29 @@ form button::before {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
-  display: none;
+  height: 50px;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
   z-index: 9999;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: white;
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-in;
 }
 .alert-box.active {
-  display: flex;
+  transform: translateY(0);
 }
 .alert-box .alert__msg {
-  position: relative;
-  width: 300px;
-  height: 100px;
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 5px;
+  color: hsl(154deg, 59%, 51%);
+  font-weight: 600;
+  text-transform: uppercase;
 }
-.alert-box .alert__msg .close-btn {
-  display: inline-block;
+.alert-box .alert__close-btn {
   position: absolute;
-  top: -30px;
-  right: -30px;
-  font-size: 2rem;
+  right: 30px;
+  font-size: 1.5rem;
   cursor: pointer;
-  color: white;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+}
+.alert-box .alert__close-btn .fa-xmark:hover {
+  color: hsl(154deg, 59%, 51%);
 }

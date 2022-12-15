@@ -1,5 +1,5 @@
 const alertBox = document.querySelector('.alert-box');
-const closeBtn = document.querySelector('.close-btn');
+const closeBtn = document.querySelector('.alert__close-btn');
 const form = document.querySelector('form');
 let inputs = document.querySelectorAll('input');
 
