@@ -41,7 +41,6 @@ const validateForm = (event) => {
 
   if(isValidated.includes(false)) return;
 
-  form.submit();
   alertBox.classList.add('active');
 
   inputs.forEach((input) => {
